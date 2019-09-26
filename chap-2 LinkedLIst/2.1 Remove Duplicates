@@ -1,0 +1,19 @@
+Remove Dups: Write code to remove duplicates from an unsorted linked list.
+FOLLOW UP
+How would you solve this problem if a temporary buffer is not allowed?
+
+
+
+
+
+def removeDuplicates(head):
+    hash=[]
+    prev=None
+    while head!=None:
+        if head.data in hash:
+            prev.next=head.next
+        else:
+            hash.append(head.data)
+            prev=head
+        head=head.next
+    return prev
